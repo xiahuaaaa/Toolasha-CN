@@ -8295,7 +8295,7 @@
 
             zones.push({
                 hrid,
-                name: action.name,
+                name: TL(action.name),
                 isDungeon: action.combatZoneInfo?.isDungeon || false,
                 maxSpawnCount: action.combatZoneInfo?.fightInfo?.randomSpawnInfo?.maxSpawnCount || 1,
                 maxDifficulty: action.maxDifficulty || 0,
