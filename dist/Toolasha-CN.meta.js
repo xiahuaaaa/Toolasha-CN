@@ -19,13 +19,13 @@
 // @require      https://cdnjs.cloudflare.com/ajax/libs/mathjs/12.4.2/math.js
 // @require      https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js
 // @require      https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0/dist/chartjs-plugin-datalabels.min.js
-// @require      https://cdn.jsdelivr.net/gh/xiahuaaaa/Toolasha-CN@ad92cebe1ff2781fcbb191ff0a65b2614d33bcc0/dist/libraries/toolasha-i18n.js
-// @require      https://cdn.jsdelivr.net/gh/xiahuaaaa/Toolasha-CN@ad92cebe1ff2781fcbb191ff0a65b2614d33bcc0/dist/libraries/toolasha-core.js
-// @require      https://cdn.jsdelivr.net/gh/xiahuaaaa/Toolasha-CN@ad92cebe1ff2781fcbb191ff0a65b2614d33bcc0/dist/libraries/toolasha-utils.js
-// @require      https://cdn.jsdelivr.net/gh/xiahuaaaa/Toolasha-CN@ad92cebe1ff2781fcbb191ff0a65b2614d33bcc0/dist/libraries/toolasha-market.js
-// @require      https://cdn.jsdelivr.net/gh/xiahuaaaa/Toolasha-CN@ad92cebe1ff2781fcbb191ff0a65b2614d33bcc0/dist/libraries/toolasha-actions.js
-// @require      https://cdn.jsdelivr.net/gh/xiahuaaaa/Toolasha-CN@ad92cebe1ff2781fcbb191ff0a65b2614d33bcc0/dist/libraries/toolasha-combat.js
-// @require      https://cdn.jsdelivr.net/gh/xiahuaaaa/Toolasha-CN@ad92cebe1ff2781fcbb191ff0a65b2614d33bcc0/dist/libraries/toolasha-ui.js
+// @require      https://cdn.jsdelivr.net/gh/xiahuaaaa/Toolasha-CN@6c0eb1fdecc0730719becfcd0aaf5a0772b8757d/dist/libraries/toolasha-i18n.js
+// @require      https://cdn.jsdelivr.net/gh/xiahuaaaa/Toolasha-CN@6c0eb1fdecc0730719becfcd0aaf5a0772b8757d/dist/libraries/toolasha-core.js
+// @require      https://cdn.jsdelivr.net/gh/xiahuaaaa/Toolasha-CN@6c0eb1fdecc0730719becfcd0aaf5a0772b8757d/dist/libraries/toolasha-utils.js
+// @require      https://cdn.jsdelivr.net/gh/xiahuaaaa/Toolasha-CN@6c0eb1fdecc0730719becfcd0aaf5a0772b8757d/dist/libraries/toolasha-market.js
+// @require      https://cdn.jsdelivr.net/gh/xiahuaaaa/Toolasha-CN@6c0eb1fdecc0730719becfcd0aaf5a0772b8757d/dist/libraries/toolasha-actions.js
+// @require      https://cdn.jsdelivr.net/gh/xiahuaaaa/Toolasha-CN@6c0eb1fdecc0730719becfcd0aaf5a0772b8757d/dist/libraries/toolasha-combat.js
+// @require      https://cdn.jsdelivr.net/gh/xiahuaaaa/Toolasha-CN@6c0eb1fdecc0730719becfcd0aaf5a0772b8757d/dist/libraries/toolasha-ui.js
 // @downloadURL https://raw.githubusercontent.com/xiahuaaaa/Toolasha-CN/main/dist/Toolasha-CN.user.js
 // @updateURL https://raw.githubusercontent.com/xiahuaaaa/Toolasha-CN/main/dist/Toolasha-CN.meta.js
 // ==/UserScript==
