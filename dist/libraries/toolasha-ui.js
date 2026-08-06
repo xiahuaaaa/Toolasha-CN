@@ -13437,7 +13437,10 @@ ${starCSS}
          */
         isTaskCompleted(taskCard) {
             const claimButton = taskCard.querySelector('button.Button_button__1Fe9z.Button_buy__3s24l');
-            return claimButton && claimButton.textContent.includes('Claim Reward');
+            if (!claimButton) return false;
+            const text = claimButton.textContent || '';
+            // CN client uses "领取奖励", EN uses "Claim Reward"
+            return text.includes('Claim Reward') || text.includes('领取奖励');
         }
 
         /**
