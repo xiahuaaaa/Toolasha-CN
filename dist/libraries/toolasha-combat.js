@@ -15617,7 +15617,7 @@
                     <button id="mwi-csim-import-btn" style="
                         background:${ACCENT_BTN_BG$2}; border:1px solid ${ACCENT_BTN_BORDER$2}; color:${ACCENT$2};
                         padding:5px 14px; border-radius:5px; font-size:12px; cursor:pointer;
-                        font-family:inherit; font-weight:600;">+ Import Player</button>
+                        font-family:inherit; font-weight:600;">${TL('+ Import Player')}</button>
                     <div id="mwi-csim-import-area" style="display:none; margin-top:10px; text-align:left;">
                         <textarea id="mwi-csim-import-text" placeholder="Paste Combat Sim Export JSON here..." style="
                             width:100%; height:60px; background:#1a1a2e; color:#e0e0e0; border:1px solid #444;
@@ -15703,7 +15703,7 @@
             html += `<button id="mwi-csim-import-btn" style="
             background:rgba(255,255,255,0.04); border:1px solid #333; color:#888;
             padding:3px 8px; border-radius:5px; font-size:11px; cursor:pointer;
-            font-family:inherit;" title="Import players from Shykai export string">+ Import</button>`;
+            font-family:inherit;" title="${TL('Import players from Shykai export string')}">${TL('+ Import')}</button>`;
             html += '</div>';
 
             // Import paste area (hidden by default)
@@ -15733,11 +15733,11 @@
 
                 html += `<div style="display:flex; align-items:center; gap:6px; margin-bottom:8px;">`;
                 if (filteredSnapshots.length > 0) {
-                    html += `<label style="color:#888; font-size:11px; flex-shrink:0;">Loadout</label>`;
+                    html += `<label style="color:#888; font-size:11px; flex-shrink:0;">${TL('Loadout')}</label>`;
                     html += `<select id="mwi-csim-loadout-select" style="
                     flex:1; min-width:0; background:#1a1a2e; color:#e0e0e0; border:1px solid #444;
                     border-radius:4px; padding:2px 6px; font-size:12px; font-family:inherit;">`;
-                    html += `<option value=""${!this._selectedLoadoutName ? ' selected' : ''}>— Current Gear —</option>`;
+                    html += `<option value=""${!this._selectedLoadoutName ? ' selected' : ''}>${TL('— Current Gear —')}</option>`;
                     for (const snap of filteredSnapshots) {
                         const label = snap.name + (snap.actionTypeHrid ? '' : ' (All Skills)');
                         const selected = this._selectedLoadoutName === snap.name ? ' selected' : '';
@@ -15748,7 +15748,7 @@
                 html += `<button id="mwi-csim-reset" style="
                 margin-left:auto; background:rgba(255,255,255,0.04); border:1px solid #333; color:#aaa;
                 padding:2px 8px; border-radius:4px; font-size:11px; cursor:pointer;
-                font-family:inherit; flex-shrink:0;">Reset to Current</button>`;
+                font-family:inherit; flex-shrink:0;">${TL('Reset to Current')}</button>`;
                 html += '</div>';
             }
 
@@ -15788,26 +15788,26 @@
                 '/equipment_types/charm',
             ];
             const slotLabels = {
-                '/equipment_types/head': 'Head',
-                '/equipment_types/body': 'Body',
-                '/equipment_types/legs': 'Legs',
-                '/equipment_types/feet': 'Feet',
-                '/equipment_types/hands': 'Hands',
-                '/equipment_types/main_hand': 'Main Hand',
-                '/equipment_types/two_hand': 'Two Hand',
-                '/equipment_types/off_hand': 'Off Hand',
-                '/equipment_types/pouch': 'Pouch',
-                '/equipment_types/back': 'Back',
-                '/equipment_types/neck': 'Neck',
-                '/equipment_types/earrings': 'Earrings',
-                '/equipment_types/ring': 'Ring',
-                '/equipment_types/charm': 'Charm',
+                '/equipment_types/head': TL('Head'),
+                '/equipment_types/body': TL('Body'),
+                '/equipment_types/legs': TL('Legs'),
+                '/equipment_types/feet': TL('Feet'),
+                '/equipment_types/hands': TL('Hands'),
+                '/equipment_types/main_hand': TL('Main Hand'),
+                '/equipment_types/two_hand': TL('Two Hand'),
+                '/equipment_types/off_hand': TL('Off Hand'),
+                '/equipment_types/pouch': TL('Pouch'),
+                '/equipment_types/back': TL('Back'),
+                '/equipment_types/neck': TL('Neck'),
+                '/equipment_types/earrings': TL('Earrings'),
+                '/equipment_types/ring': TL('Ring'),
+                '/equipment_types/charm': TL('Charm'),
             };
 
             const equippedCount = slotOrder.filter((s) => dto.equipment[s]).length;
             let html = `<div style="margin-bottom:10px;">`;
             html += `<div style="color:${ACCENT$2}; font-weight:700; font-size:12px; margin-bottom:6px; cursor:pointer; user-select:none;" data-toggle="equip-section">`;
-            html += `<span data-arrow="equip-section" style="display:inline-block; width:14px; font-size:10px;">&#9654;</span> Equipment (${equippedCount} items)`;
+            html += `<span data-arrow="equip-section" style="display:inline-block; width:14px; font-size:10px;">&#9654;</span> ${TL('Equipment')} (${equippedCount} ${TL('items')})`;
             html += '</div>';
             html += `<div id="mwi-csim-equip-section" style="display:none;">`;
 
@@ -15850,7 +15850,7 @@
 
             let html = `<div style="margin-bottom:10px;">`;
             html += `<div style="color:${ACCENT$2}; font-weight:700; font-size:12px; margin-bottom:6px; cursor:pointer; user-select:none;" data-toggle="ability-section">`;
-            html += `<span data-arrow="ability-section" style="display:inline-block; width:14px; font-size:10px;">&#9654;</span> Abilities (${abilityCount} equipped)`;
+            html += `<span data-arrow="ability-section" style="display:inline-block; width:14px; font-size:10px;">&#9654;</span> ${TL('Abilities')} (${abilityCount} ${TL('equipped')})`;
             html += '</div>';
             html += `<div id="mwi-csim-ability-section" style="display:none;">`;
 
@@ -15901,18 +15901,19 @@
                 ACCENT$2 +
                 '; font-weight:700; font-size:12px; margin-bottom:6px; cursor:pointer; user-select:none;" data-toggle="consumable-section">';
             html +=
-                '<span data-arrow="consumable-section" style="display:inline-block; width:14px; font-size:10px;">&#9654;</span> Consumables (' +
+                '<span data-arrow="consumable-section" style="display:inline-block; width:14px; font-size:10px;">&#9654;</span> ' +
+                TL('Consumables') + ' (' +
                 foodCount +
-                ' food, ' +
+                ' ' + TL('food') + ', ' +
                 drinkCount +
-                ' drinks)';
+                ' ' + TL('drinks') + ')';
             html += '</div>';
             html += '<div id="mwi-csim-consumable-section" style="display:none;">';
 
-            html += '<div style="color:#888; font-size:11px; margin-bottom:3px;">Food</div>';
+            html += '<div style="color:#888; font-size:11px; margin-bottom:3px;">' + TL('Food') + '</div>';
             for (let i = 0; i < 3; i++) {
                 const item = dto.food[i];
-                const name = item ? itemDetailMap[item.hrid]?.name || item.hrid.split('/').pop() : 'Empty';
+                const name = item ? itemDetailMap[item.hrid]?.name || item.hrid.split('/').pop() : TL('Empty');
                 const nameColor = item ? '#e0e0e0' : '#555';
                 html += '<div style="display:flex; align-items:center; gap:6px; padding:2px 0; font-size:12px;">';
                 html += '<span style="color:#666; width:16px; flex-shrink:0;">' + (i + 1) + '</span>';
@@ -15932,7 +15933,7 @@
             html += '<div style="color:#888; font-size:11px; margin-bottom:3px; margin-top:6px;">Drinks</div>';
             for (let i = 0; i < 3; i++) {
                 const item = dto.drinks[i];
-                const name = item ? itemDetailMap[item.hrid]?.name || item.hrid.split('/').pop() : 'Empty';
+                const name = item ? itemDetailMap[item.hrid]?.name || item.hrid.split('/').pop() : TL('Empty');
                 const nameColor = item ? '#e0e0e0' : '#555';
                 html += '<div style="display:flex; align-items:center; gap:6px; padding:2px 0; font-size:12px;">';
                 html += '<span style="color:#666; width:16px; flex-shrink:0;">' + (i + 1) + '</span>';
@@ -16039,7 +16040,7 @@
                 'display:flex; justify-content:space-between; align-items:center; padding:8px 14px; border-bottom:1px solid rgba(74,158,255,0.3); flex-shrink:0;';
             header.innerHTML =
                 '<span style="font-weight:700; font-size:13px; color:#4a9eff;">Select ' +
-                (isFood ? 'Food' : 'Drink') +
+                (isFood ? TL('Food') : TL('Drink')) +
                 '</span>' +
                 '<button id="mwi-csim-picker-close" style="background:none; border:none; color:#aaa; font-size:20px; cursor:pointer; padding:0; line-height:1;">\u00d7</button>';
             popup.appendChild(header);
@@ -16479,7 +16480,7 @@
 
             let html = `<div style="margin-bottom:10px;">`;
             html += `<div style="color:${ACCENT$2}; font-weight:700; font-size:12px; margin-bottom:6px; cursor:pointer; user-select:none;" data-toggle="skill-section">`;
-            html += `<span data-arrow="skill-section" style="display:inline-block; width:14px; font-size:10px;">&#9654;</span> Skill Levels`;
+            html += `<span data-arrow="skill-section" style="display:inline-block; width:14px; font-size:10px;">&#9654;</span> ${TL('Skill Levels')}`;
             html += `<span style="color:#888; font-weight:400; font-size:11px; margin-left:6px;">${summary}</span>`;
             html += '</div>';
             html += `<div id="mwi-csim-skill-section" style="display:none;">`;
@@ -16507,7 +16508,7 @@
 
             let html = `<div style="margin-bottom:10px;">`;
             html += `<div style="color:${ACCENT$2}; font-weight:700; font-size:12px; margin-bottom:6px; cursor:pointer; user-select:none;" data-toggle="house-section">`;
-            html += `<span data-arrow="house-section" style="display:inline-block; width:14px; font-size:10px;">&#9654;</span> House Rooms`;
+            html += `<span data-arrow="house-section" style="display:inline-block; width:14px; font-size:10px;">&#9654;</span> ${TL('House Rooms')}`;
             html += `<span style="color:#888; font-weight:400; font-size:11px; margin-left:6px;">${activeCount} active</span>`;
             html += '</div>';
             html += `<div id="mwi-csim-house-section" style="display:none;">`;
@@ -16829,20 +16830,20 @@
             const changes = [];
 
             const slotNames = {
-                '/equipment_types/head': 'Head',
-                '/equipment_types/body': 'Body',
-                '/equipment_types/legs': 'Legs',
-                '/equipment_types/feet': 'Feet',
-                '/equipment_types/hands': 'Hands',
-                '/equipment_types/main_hand': 'Main Hand',
-                '/equipment_types/two_hand': 'Two Hand',
-                '/equipment_types/off_hand': 'Off Hand',
-                '/equipment_types/pouch': 'Pouch',
-                '/equipment_types/back': 'Back',
-                '/equipment_types/neck': 'Neck',
-                '/equipment_types/earrings': 'Earrings',
-                '/equipment_types/ring': 'Ring',
-                '/equipment_types/charm': 'Charm',
+                '/equipment_types/head': TL('Head'),
+                '/equipment_types/body': TL('Body'),
+                '/equipment_types/legs': TL('Legs'),
+                '/equipment_types/feet': TL('Feet'),
+                '/equipment_types/hands': TL('Hands'),
+                '/equipment_types/main_hand': TL('Main Hand'),
+                '/equipment_types/two_hand': TL('Two Hand'),
+                '/equipment_types/off_hand': TL('Off Hand'),
+                '/equipment_types/pouch': TL('Pouch'),
+                '/equipment_types/back': TL('Back'),
+                '/equipment_types/neck': TL('Neck'),
+                '/equipment_types/earrings': TL('Earrings'),
+                '/equipment_types/ring': TL('Ring'),
+                '/equipment_types/charm': TL('Charm'),
             };
 
             for (const slot of Object.keys(slotNames)) {
@@ -16906,8 +16907,8 @@
                     const origHrid = original[slotType]?.[i]?.hrid;
                     const editHrid = edited[slotType]?.[i]?.hrid;
                     if (origHrid !== editHrid) {
-                        const origName = origHrid ? itemDetailMap[origHrid]?.name || origHrid.split('/').pop() : 'Empty';
-                        const editName = editHrid ? itemDetailMap[editHrid]?.name || editHrid.split('/').pop() : 'Empty';
+                        const origName = origHrid ? itemDetailMap[origHrid]?.name || origHrid.split('/').pop() : TL('Empty');
+                        const editName = editHrid ? itemDetailMap[editHrid]?.name || editHrid.split('/').pop() : TL('Empty');
                         changes.push(`${prefix} ${i + 1}: ${origName}\u2192${editName}`);
                     }
                 }
@@ -17056,7 +17057,7 @@
             flex-shrink: 0;
         `;
             header.innerHTML = `
-            <span style="font-weight:700; font-size:14px; color:${ACCENT$1};">Combat Simulator</span>
+            <span style="font-weight:700; font-size:14px; color:${ACCENT$1};">${TL('Combat Simulator')}</span>
             <button id="mwi-csim-close" style="
                 background:none; border:none; color:#aaa; font-size:22px;
                 cursor:pointer; padding:0; line-height:1;">×</button>
@@ -17088,10 +17089,10 @@
             border-bottom: 2px solid ${active ? ACCENT$1 : 'transparent'};
         `;
             tabBar.innerHTML = `
-            <button id="mwi-csim-tab-configure" style="${tabStyle(true)}">Configure</button>
-            <button id="mwi-csim-tab-results" style="${tabStyle(false)}">Results</button>
-            <button id="mwi-csim-tab-seek" style="${tabStyle(false)}">Seek</button>
-            <button id="mwi-csim-tab-upgrade" style="${tabStyle(false)}">Upgrade</button>
+            <button id="mwi-csim-tab-configure" style="${tabStyle(true)}">${TL('Configure')}</button>
+            <button id="mwi-csim-tab-results" style="${tabStyle(false)}">${TL('Results')}</button>
+            <button id="mwi-csim-tab-seek" style="${tabStyle(false)}">${TL('Seek')}</button>
+            <button id="mwi-csim-tab-upgrade" style="${tabStyle(false)}">${TL('Upgrade')}</button>
         `;
 
             // Configure tab content
@@ -17117,12 +17118,12 @@
                 'width:60px; background:#1a1a2e; color:#e0e0e0; border:1px solid #444; border-radius:4px; padding:3px 6px; font-size:12px; text-align:center;';
 
             controls.innerHTML = `
-            <label style="color:#888; font-size:12px;">Zone</label>
+            <label style="color:#888; font-size:12px;">${TL('Zone')}</label>
             <select id="mwi-csim-zone" style="${selectStyle}"></select>
-            <label style="color:#888; font-size:12px;">Tier</label>
+            <label style="color:#888; font-size:12px;">${TL('Tier')}</label>
             <select id="mwi-csim-tier" style="${selectStyle} flex:0; width:64px; min-width:64px;">
             </select>
-            <label style="color:#888; font-size:12px;">Hours</label>
+            <label style="color:#888; font-size:12px;">${TL('Hours')}</label>
             <input id="mwi-csim-hours" type="number" min="1" max="10000" value="${config.getSettingValue('combatSim_defaultHours', 100)}" style="${inputStyle}">
             <button id="mwi-csim-run" style="
                 margin-left: auto;
@@ -17133,7 +17134,7 @@
                 padding: 5px 14px;
                 font-size: 12px;
                 font-weight: 600;
-                cursor: pointer;">Simulate</button>
+                cursor: pointer;">${TL('Simulate')}</button>
         `;
 
             // All Zones controls row
@@ -17153,17 +17154,17 @@
             allZonesRow.innerHTML = `
             <label style="${labelStyle}">
                 <input type="checkbox" id="mwi-csim-allzones-group" style="${checkboxStyle}">
-                Sim All Zones
+                ${TL('Sim All Zones')}
             </label>
             <label style="${labelStyle}">
                 <input type="checkbox" id="mwi-csim-allzones-solo" style="${checkboxStyle}">
-                Sim All Solo
+                ${TL('Sim All Solo')}
             </label>
-            <label id="mwi-csim-allzones-hours-label" style="color:#888; font-size:12px; display:none;">Hours</label>
+            <label id="mwi-csim-allzones-hours-label" style="color:#888; font-size:12px; display:none;">${TL('Hours')}</label>
             <input id="mwi-csim-allzones-hours" type="number" min="1" max="10000" value="${config.getSettingValue('combatSim_allZonesDefaultHours', 10)}" style="display:none; width:60px; background:#1a1a2e; color:#e0e0e0; border:1px solid #444; border-radius:4px; padding:3px 6px; font-size:12px; text-align:center;">
             <label id="mwi-csim-earlyexit-label" style="${labelStyle} display:none;" title="Stop simming higher tiers for a zone if both XP/hr and profit/hr declined vs the previous tier">
                 <input type="checkbox" id="mwi-csim-earlyexit" style="${checkboxStyle}" checked>
-                Skip Worse Tiers
+                ${TL('Skip Worse Tiers')}
             </label>
         `;
 
@@ -17264,13 +17265,13 @@
             flex-shrink: 0;
         `;
             seekControls.innerHTML = `
-            <label style="color:#888; font-size:12px;">Item</label>
-            <input id="mwi-csim-seek-input" type="text" placeholder="Search item..." style="
+            <label style="color:#888; font-size:12px;">${TL('Item')}</label>
+            <input id="mwi-csim-seek-input" type="text" placeholder="${TL('Search item...')}" style="
                 flex:1; min-width:0;
                 background:#1a1a2e; color:#e0e0e0;
                 border:1px solid #444; border-radius:4px;
                 padding:3px 6px; font-size:12px; font-family:inherit;">
-            <label style="color:#888; font-size:12px;">Hours</label>
+            <label style="color:#888; font-size:12px;">${TL('Hours')}</label>
             <input id="mwi-csim-seek-hours" type="number" min="1" max="10000" value="${config.getSettingValue('combatSim_seekDefaultHours', 10)}" style="
                 width:60px; background:#1a1a2e; color:#e0e0e0;
                 border:1px solid #444; border-radius:4px;
@@ -17284,7 +17285,7 @@
                 font-size: 12px;
                 font-weight: 600;
                 cursor: pointer;
-                font-family: inherit;">Seek</button>
+                font-family: inherit;">${TL('Seek')}</button>
             <button id="mwi-csim-seek-stop" style="
                 display:none;
                 background:rgba(244, 67, 54, 0.2);
@@ -17364,11 +17365,11 @@
                 <input id="mwi-csim-upgrade-target-level" type="number" min="1" max="200" value="5" placeholder="+5" style="
                     width:55px; background:#1a1a2e; color:#e0e0e0; border:1px solid #444;
                     border-radius:3px; padding:3px 5px; font-size:12px; text-align:center;"
-                    title="Number of levels to add to each ability">
+                    title="${TL('Number of levels to add to each ability')}">
             </span>
             <label style="display:flex; align-items:center; gap:4px; color:#888; font-size:12px; cursor:pointer;">
                 <input type="checkbox" id="mwi-csim-upgrade-skip-back" style="margin:0; cursor:pointer;">
-                Skip Back
+                ${TL('Skip Back')}
             </label>
             <button id="mwi-csim-upgrade-run" style="
                 background: ${ACCENT_BTN_BG$1};
@@ -17379,7 +17380,7 @@
                 font-size: 12px;
                 font-weight: 600;
                 cursor: pointer;
-                font-family: inherit;">Analyze</button>
+                font-family: inherit;">${TL('Analyze')}</button>
             <button id="mwi-csim-upgrade-stop" style="
                 display:none;
                 background:rgba(244, 67, 54, 0.2);
@@ -17418,7 +17419,7 @@
             status.id = 'mwi-csim-status';
             status.style.cssText =
                 'padding:6px 14px; color:#555; font-size:11px; border-top:1px solid #1a1a1a; flex-shrink:0; text-align:center;';
-            status.textContent = 'Select a zone and click Simulate.';
+            status.textContent = TL('Select a zone and click Simulate.');
 
             this.panel.appendChild(header);
             this.panel.appendChild(tabBar);
@@ -17482,7 +17483,7 @@
                 } else {
                     input.value = '';
                     input.placeholder = 'e.g. 80';
-                    input.title = 'Absolute target level for all abilities';
+                    input.title = TL('Absolute target level for all abilities');
                 }
             });
             this.panel.querySelector('#mwi-csim-upgrade-target-level').addEventListener('change', (e) => {
@@ -17728,14 +17729,14 @@
 
             const skillCols = [
                 { key: 'totalXP', label: 'Total XP/hr' },
-                { key: 'profitDay', label: 'Profit/day' },
-                { key: 'stamina', label: 'Stam' },
-                { key: 'intelligence', label: 'Int' },
-                { key: 'attack', label: 'Atk' },
-                { key: 'melee', label: 'Melee' },
-                { key: 'defense', label: 'Def' },
-                { key: 'ranged', label: 'Ranged' },
-                { key: 'magic', label: 'Magic' },
+                { key: 'profitDay', label: TL('Profit/day') },
+                { key: 'stamina', label: TL('Stam') },
+                { key: 'intelligence', label: TL('Int') },
+                { key: 'attack', label: TL('Atk') },
+                { key: 'melee', label: TL('Melee') },
+                { key: 'defense', label: TL('Def') },
+                { key: 'ranged', label: TL('Ranged') },
+                { key: 'magic', label: TL('Magic') },
             ];
 
             const cols = [
@@ -18115,10 +18116,10 @@
                 clearInterval(this.elapsedTimer);
                 this.elapsedTimer = null;
                 if (error.message === 'Cancelled') {
-                    this._setStatus('Seek cancelled.');
+                    this._setStatus(TL('Seek cancelled.'));
                 } else {
                     console.error('[CombatSimUI] Seek simulation failed:', error);
-                    this._setStatus(`Seek error: ${error.message || 'Unknown error'}`);
+                    this._setStatus(`${TL('Seek error:')} ${error.message || TL('Unknown error')}`);
                 }
             } finally {
                 this.isRunning = false;
@@ -18288,12 +18289,12 @@
             if (tab === 'configure') {
                 configureContent.style.display = 'flex';
                 tabConfigure.style.cssText = activeStyle;
-                this._setStatus('Select a zone and click Simulate.');
+                this._setStatus(TL('Select a zone and click Simulate.'));
             } else if (tab === 'seek') {
                 if (seekContent) seekContent.style.display = 'flex';
                 if (tabSeek) tabSeek.style.cssText = activeStyle;
                 this._populateSeekItems();
-                this._setStatus('Search for a combat drop item, then click Seek.');
+                this._setStatus(TL('Search for a combat drop item, then click Seek.'));
             } else if (tab === 'upgrade') {
                 if (upgradeContent) upgradeContent.style.display = 'flex';
                 if (tabUpgrade) tabUpgrade.style.cssText = activeStyle;
@@ -20518,9 +20519,9 @@
             border-bottom: 2px solid ${active ? ACCENT : 'transparent'};
         `;
             tabBar.innerHTML = `
-            <button id="mwi-labsim-tab-configure" style="${tabStyle(true)}">Configure</button>
+            <button id="mwi-labsim-tab-configure" style="${tabStyle(true)}">${TL('Configure')}</button>
             <button id="mwi-labsim-tab-maxlevel" style="${tabStyle(false)}">Max Level</button>
-            <button id="mwi-labsim-tab-upgrade" style="${tabStyle(false)}">Upgrade</button>
+            <button id="mwi-labsim-tab-upgrade" style="${tabStyle(false)}">${TL('Upgrade')}</button>
             <button id="mwi-labsim-tab-skilling" style="${tabStyle(false)}">Skilling</button>
         `;
 
@@ -20544,7 +20545,7 @@
             <select id="mwi-labsim-monster" style="${selectStyle}"></select>
             <label style="color:#888; font-size:12px;">Level</label>
             <input id="mwi-labsim-level" type="number" min="20" max="300" value="100" style="${inputStyle}">
-            <label style="color:#888; font-size:12px;">Hours</label>
+            <label style="color:#888; font-size:12px;">${TL('Hours')}</label>
             <input id="mwi-labsim-hours" type="number" min="1" max="10000" value="${config.getSettingValue('labyrinthRecommendSimHours', 10)}" style="${inputStyle}">
         `;
 
@@ -20643,7 +20644,7 @@
                 padding: 5px 14px;
                 font-size: 12px;
                 font-weight: 600;
-                cursor: pointer;">Simulate</button>
+                cursor: pointer;">${TL('Simulate')}</button>
             <label style="display:flex; align-items:center; gap:4px; color:#888; cursor:pointer;" title="Binary search for highest beatable level at the specified win rate threshold">
                 <input type="checkbox" id="mwi-labsim-findmax" style="margin:0; cursor:pointer;">
                 Find Max \u2265
@@ -20698,7 +20699,7 @@
                 font-size: 12px;
                 font-weight: 600;
                 cursor: pointer;
-                font-family: inherit;">Analyze</button>
+                font-family: inherit;">${TL('Analyze')}</button>
             <button id="mwi-labsim-upgrade-stop" style="
                 display:none;
                 background:rgba(244, 67, 54, 0.2);
