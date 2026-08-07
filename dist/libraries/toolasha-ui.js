@@ -13467,6 +13467,14 @@ ${starCSS}
                         monsterSortIndex = dataManager.getMonsterSortIndex(monsterHrid);
                     }
                 }
+                // CN fallback: name lookup fails for Chinese monster names,
+                // use quest matching (language-agnostic, based on reward data)
+                if (monsterSortIndex === 999) {
+                    const quest = taskIcons.findQuestForTaskCard(taskCard);
+                    if (quest && quest.monsterHrid) {
+                        monsterSortIndex = dataManager.getMonsterSortIndex(quest.monsterHrid);
+                    }
+                }
             }
 
             return {
